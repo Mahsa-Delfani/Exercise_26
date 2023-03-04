@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        <xmp>
+            switch(condition){
+                case "1" : satement; break;
+                case "2" : satement; break;
+                case "3" : satement; break;
+                case "4" : satement; break;
+                case "5" : satement; break;
+                case "6" : satement; break;
+                case "7" : satement; break;
+                default : 'else';
+            }
+        </xmp>
+    </pre>
+</body>
+<script>
+    let _week = new Date()
+  let temp = ''
+    switch(_week.getDay()){
+        case 0: temp = ' یکشنبه' ;break;
+        case 1: temp = ' دوشنبه' ;break;
+        case 2: temp = ' سه شنبه' ;break;
+        case 3: temp = ' چهارشنبه' ;break;
+        case 4: temp = ' پنج شنبه' ;break;
+        case 5: temp = ' جمعه' ;break;
+        case 6: temp = ' شنبه' ;break;
+    }
+    document.write('سلام امروز مورخ ' + _week.toLocaleDateString('fa') + ' و : ' + temp)
+</script>
+</html>

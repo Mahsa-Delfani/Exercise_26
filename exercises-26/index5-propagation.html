@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #m{
+            width: 600px;
+            height: 600px;
+            background-color: rgb(225, 70, 127);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #b{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(140, 129, 30);
+        }
+    </style>
+</head>
+<body>
+    <div id="m">
+         parent
+        <div id="b">
+             children
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('parent').addEventListener('click', function(){
+        alert('i am parent!')
+    }, true)
+    document.getElementById('child').addEventListener('click', function(){
+        alert('i am children!')
+    } ,true)
+</script>
+</html>

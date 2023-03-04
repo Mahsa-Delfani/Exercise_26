@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(229, 49, 148);
+        }
+        .menu{
+            width: 100%;
+            padding: 20px;
+        }
+        .menu>ul{
+            display: flex;
+            list-style: none;
+            background-color: rgb(221, 116, 184);
+        }
+        .menu>ul>li{
+            padding: 20px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .menu>ul:first-child>li:hover{
+            background: rgb(247, 8, 131) !important;
+        }
+        .menu>ul:last-child{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li onclick="name(this, 'cat1')">store</li>
+            <li onclick="name(this, 'cat2')">about</li>
+            <li onclick="nmae(this, 'cat3')">menu</li>
+        </ul>
+        <ul></ul>
+    </nav>  
+</body>
+<script>
+    const cat1 = ['m1', 'm2', 'm3', 'm4']
+    const cat2 = ['d1', 'd2']
+    const cat3 = ['s1', 's2', 's3']
+
+    let _li = document.querySelectorAll('.menu>ul:first-child>li')
+
+    function mahsa(self, cat) {
+        document.querySelector('.menu>ul:last-child').innerHTML = ''
+        
+        for (i = 0; i < _li.length; i++) {
+            _li[i].style.background = 'transparent'
+        }
+        self.style.background = 'white'
+        const num = []
+        switch (dl) {
+            case 'dl1': test.push(cat1);_loop(test); break;
+            case 'dl2': test.push(cat2);_loop(test); break;
+            case 'dl3': test.push(cat3);_loop(test); break;
+        }
+    }
+    function _loop(num) {
+        for (i = 0; i < num[0].length; i++) {
+            temp = document.createElement('li')
+            temp.innerHTML = num[0][i]
+            document.querySelector('.menu>ul:last-child').appendChild(temp)
+        }
+    }
+</script>
+</html>

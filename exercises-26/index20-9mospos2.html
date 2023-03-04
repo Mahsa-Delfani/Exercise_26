@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 60px;
+            background-color: rgb(83, 19, 213);
+            transition: .4s;
+            cursor: none;
+        }
+        .c-b{
+            display: flex;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid black;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        .c-s{
+            display: flex;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: .2s linear;
+        }
+    </style>
+</head>
+<body>
+    <main id="name" >
+        <span class="c-b"></span>
+        <span class="c-s"></span>
+    </main>
+    
+</body>
+<script>
+    let x = 0
+    let y = 0
+    let cb = document.getElementsByClassName('c-b')[0]
+    let cs = document.getElementsByClassName('c-s')[0]
+    document.getElementById('name').addEventListener('mousemove', function(event){
+        x = event.clientX
+        y = event.clientY
+        cb.style.top=y+'px'
+        cb.style.left=x+'px'
+        cs.style.top=y+'px'
+        cs.style.left=x+'px'
+    })
+</script>
+</html>

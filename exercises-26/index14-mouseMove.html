@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(137, 133, 134);
+            font-size: 80px;
+            background-color: rgb(33, 193, 145);
+            transition: .4s;
+        }
+    </style>
+</head>
+<body>
+    <main id="num" onmousemove="name()">
+        <span></span>
+    </main> 
+</body>
+<script>
+    function name(){
+        let x = Math.floor(Math.random()*100000)
+        document.querySelector('#num>span').innerHTML=x
+        let m1 = Math.floor(Math.random()*256)
+        let m2 = Math.floor(Math.random()*256)
+        let m3 = Math.floor(Math.random()*256)
+        document.getElementById('num').style.background='rgb( '+m1+', '+m2+', '+m3+')'
+    }
+</script>
+</html>

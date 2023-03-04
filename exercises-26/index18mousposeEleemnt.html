@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(140, 136, 136);
+            font-size: 70px;
+            background-color: rgb(182, 7, 138);
+            background-image: url(img/index.jpg);
+            background-size: cover;
+        }
+        main>span{
+            text-shadow: 2px 2px 10px rgb(72, 70, 70);
+        }
+    </style>
+</head>
+<body>
+    <main id="box" >
+        <span></span>
+    </main>
+</body>
+<script>
+    let _box = document.getElementById('box')
+    let width = (_box.clientWidth)/2
+    let height = (_box.clientHeight)/2
+
+    document.getElementById('box').addEventListener('mousemove', function(event){
+
+        let x = (event.offsetX)-width
+        let y = (event.offsetY)-height
+        console.log(event);
+        document.querySelector('#box>span').innerHTML=x + " - " + y
+        this.style.transform='perspective(800px)rotateY('+(x/10)+'deg)rotateX('+(y/10)+'deg)'
+    })
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+        }
+        .pic{
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+        .pic>*{
+            position: absolute;
+        }
+        .pic>img{
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            transition: .4s;
+        }
+    </style>
+</head>
+<body>
+    <figure class="pic">
+        <img src="img/index.jpg" alt="">
+    </figure>
+</body>
+<script>
+    let x = 0
+    let y = 0
+    let img = document.querySelector('.pic>img')
+    document.getElementsByClassName('pic')[0].addEventListener('mousemove', function(event){
+        x = event.offsetX
+        y = event.offsetY
+        console.log(x+ " - " + y);
+
+        img.style.transform='scale(2)translate('+(x-200)+'px, '+(y-200)+'px)'
+
+    })
+
+    document.getElementsByClassName('pic')[0].addEventListener('mouseleave', function(event){
+        img.style.transform='scale(1)translate(0px, 0px)'
+    })
+</script>
+</html>
